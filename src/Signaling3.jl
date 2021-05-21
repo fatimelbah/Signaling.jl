@@ -37,11 +37,11 @@ end
     
 #integral from theta star to lamda  
      
-#f(t)= [1 ./ ((lambda-t)+pi*(1-lambda)) .* f_regions[theta,lambda,B]
 
 function errmktclear_regions(pi,theta,lambda,B)
-        w = quadgk[ 1 ./ ((lambda-theta)+pi*(1-lambda)) .* f_regions(theta,lambda,B),theta,lambda]-1
-        return w
+    f(t)= 1 ./ ((lambda-theta)+pi*(1-lambda)) .* f_regions(theta,lambda,B)
+        w = quadgk(f,theta,lambda)
+        return w[1] -1
 end
     
         #########
@@ -73,7 +73,7 @@ end
  Bs = LinRange(.1,7,NB)
 
  ## Plot equilibrium conditions
-
+#= 
 M = 9
 pis = LinRange(0.00001,.99999,M) # Linrange is equivalent to Linspace in Matlab which generates linearly spaced values. 
 guesstheta = 0.5
@@ -130,5 +130,6 @@ wstar=zeros(NC)
             
         end
     end
+    =# 
 ## couldn't generate the plots 
 end

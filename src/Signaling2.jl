@@ -51,8 +51,8 @@ function errmktclear_regions_1(pi::Any,theta::Any,lambda::Any,B::Any)
         return w[1]-1 #quadg returns a vector where the first entry is the value of the computed integral
 end
     
-        #########
-  ## Now let's create the main document that will call upon all these functions
+
+## Now let's create the main document that will call upon all these functions
   # This document computes the regions of the parameter space where we have different types of equilibria
     
   global qH, qL, cL, lambda, A, e, e2
@@ -78,7 +78,7 @@ end
 
  NB = 280
  Bs = LinRange(.1,7,NB)
-
+end 
 ## Plot equilibrium conditions
 
 #=
@@ -140,4 +140,3 @@ wstar=zeros(NC)
     end
     =#
 ## I was not able to get the plots they had for the paper. 
-end 

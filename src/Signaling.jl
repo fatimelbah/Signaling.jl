@@ -9,6 +9,7 @@ export errmktclear, equil, f, indif, mktclear2
 
 
 """
+
 using Roots, Plots, LaTeXStrings, Statistics, ColorSchemes, Calculus, QuadGK
 
 ###Parameters ###
