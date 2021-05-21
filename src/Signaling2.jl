@@ -6,7 +6,6 @@ using Roots, Plots, LaTeXStrings, Statistics, ColorSchemes, Calculus, QuadGK
 
 #This file create the numerical simulations used to generate the left panel of figure 7
 
-
 function indif_regions_1(pi::Any,cH::Any)
         
     global cL, lambda
@@ -14,7 +13,7 @@ function indif_regions_1(pi::Any,cH::Any)
     x = max(lambda - pi.*(1-lambda).* 1 ./ (cL./cH-1),0)
     
     return x
-end  
+end 
 
 function equil_regions_1(pi::Any,lambda::Any,B::Any,c_H::Any)
 
