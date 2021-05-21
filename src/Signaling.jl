@@ -1,4 +1,4 @@
-module SignalingToExperts
+module Signaling
 
 export errmktclear, equil, f, indif, mktclear2
 
@@ -111,7 +111,7 @@ thetas= zeros(N2)
 
 thetas = LinRange(0,lambda,N2)
 
-plot(thetas,f(thetas))
+#plot(thetas,f(thetas)) did not work
 
 ## Plot equilibrium conditions
 
@@ -128,19 +128,20 @@ end
 ## I was not able to plot these as they were using an integrate matlab plots with latex 
 # that I unfortunately could not repllicate on time. 
 
-plot(pis,inds,"b',pis,mcs,'r','LineWidth",1.2) 
+#plot(pis,inds,"b',pis,mcs,'r','LineWidth",1.2) 
 
-leg = legend("Indifference','Market Clearing")
+#leg = legend("Indifference','Market Clearing")
 
-xlabel("$\pi$','Interpreter', 'Latex','FontSize", 20) 
-ylabel("$\theta$','Interpreter', 'Latex','FontSize", 20)
+#xlabel("$\pi$','Interpreter', 'Latex','FontSize", 20) 
+#ylabel("$\theta$','Interpreter', 'Latex','FontSize", 20)
 
 """ Find equilibria near hand-picked points"""
+
 find_zero( theta -> errmktclear(pi,theta),(0,guesstheta))
 pistar[1] = find_zero(pi-> equil(pi),(0,0.1)) 
 pistar[2] = find_zero(pi-> equil(pi),(0,0.9))
 
-for j = 1:2
+for j in 1:2
     thetastar[j] = mktclear2(pistar[j],guesstheta)
     guesstheta = thetastar[j]
 end
