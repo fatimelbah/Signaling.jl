@@ -79,8 +79,9 @@ end
  NB = 280
  Bs = LinRange(.1,7,NB)
 
- ## Plot equilibrium conditions
+## Plot equilibrium conditions
 
+#=
 M = 9
 pis = LinRange(0.00001,.99999,M) # Linrange is equivalent to Linspace in Matlab which generates linearly spaced values. 
 guesstheta = 0.5
@@ -137,5 +138,6 @@ wstar=zeros(NC)
             
         end
     end
+    =#
 ## I was not able to get the plots they had for the paper. 
 end 
