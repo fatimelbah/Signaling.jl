@@ -117,6 +117,7 @@ thetas = LinRange(0,lambda,N2)
 
 guesstheta = lambda-0.03
 
+#=
 for j in 1:N
     inds[j]= indif(pis[j])
     mcs[j]= mktclear2(pis[j],guesstheta)
@@ -155,7 +156,7 @@ profits[1,:] = ((lambda - thetasdev[1,:])*qL + pistar[1]*(1-lambda)*qH)./ (lambd
 
 profits[2,:] = ((lambda - thetasdev[2,:])*qL + pistar[2]*(1-lambda)*qH)./ (lambda - thetasdev[2,:] + pistar[2]*(1-lambda)) .-wstar
 
-for j = 1:N
+ for j = 1:N
 
     a= quadgk(1 ./ (pistar[1]*(1-lambda)+lambda-t) .*f(t),thetastar[1],thetasdev[1,j])
     b= quadgk(1 ./(pistar[2]*(1-lambda)+lambda-t) .*f(t),thetastar[2],thetasdev[2,j])
@@ -169,11 +170,11 @@ for j = 1:N
     devprofits[2,j] = qH -wD[2,j]
 end
 
-plot(thetasdev[1,:],profits[1,:],thetasdev[1,:],devprofits[1,:])
-legend("eq','dev")
+#plot(thetasdev[1,:],profits[1,:],thetasdev[1,:],devprofits[1,:])
+#legend("eq','dev")
 
-plot(thetasdev[2,:],profits[2,:],thetasdev[2,:],devprofits[2,:])
-legend("eq','dev")
-
+#plot(thetasdev[2,:],profits[2,:],thetasdev[2,:],devprofits[2,:])
+#legend("eq','dev")
+=#
 
 end
